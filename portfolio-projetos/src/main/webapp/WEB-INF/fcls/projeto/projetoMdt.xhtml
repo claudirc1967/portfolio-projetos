@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:ui="http://java.sun.com/jsf/facelets" 
+	xmlns:plcf="http://www.powerlogic.com.br/plcf" 
+	xmlns:tr="http://myfaces.apache.org/trinidad" 
+	xmlns:trh="http://myfaces.apache.org/trinidad/html">  
+	<ui:composition> 
+		<plcf:tabela tituloChave="projeto.mestre.titulo.comp"> 
+			<plcf:linha> 
+				<plcf:celula> 
+					<plcf:titulo value="#{msg['label.id']}"/>  
+					<plcf:oid id="id" value="#{projeto.id}" ajudaChave="ajuda.id"/> 
+				</plcf:celula>  
+				<plcf:celula> 
+					<plcf:titulo value="#{msg['label.nome']}"/>  
+					<plcf:texto id="nome" value="#{projeto.nome}" ajudaChave="ajuda.nome"/> 
+				</plcf:celula>  
+				<plcf:celula> 
+					<plcf:titulo value="#{msg['label.dataInicio']}"/>  
+					<plcf:data id="dataInicio" value="#{projeto.dataInicio}" ajudaChave="ajuda.dataInicio"/> 
+				</plcf:celula> 
+			</plcf:linha>  
+			<plcf:linha> 
+				<plcf:celula> 
+					<plcf:titulo value="#{msg['label.previsaoTermino']}"/>  
+					<plcf:data id="previsaoTermino" value="#{projeto.previsaoTermino}" ajudaChave="ajuda.previsaoTermino"/> 
+				</plcf:celula>  
+				<plcf:celula> 
+					<plcf:titulo value="#{msg['label.dataRealTermino']}"/>  
+					<plcf:data id="dataRealTermino" value="#{projeto.dataRealTermino}" ajudaChave="ajuda.dataRealTermino"/> 
+				</plcf:celula>  
+				<plcf:celula> 
+					<plcf:titulo value="#{msg['label.descricao']}"/>
+					<plcf:area id="descricao" value="#{projeto.descricao}" numLinhas="6" colunas="60" ajudaChave="ajuda.descricao"/>
+				</plcf:celula> 
+			</plcf:linha>  
+			<plcf:linha> 
+				<plcf:celula> 
+					<plcf:titulo value="#{msg['label.orcamentoTotal']}"/>  
+					<plcf:numerico id="orcamentoTotal" value="#{projeto.orcamentoTotal}" ajudaChave="ajuda.orcamentoTotal"/> 
+				</plcf:celula>  
+				<plcf:celula> 
+					<plcf:titulo value="#{msg['label.gerente']}"/>  
+					<plcf:comboDinamico id="gerente" value="#{projeto.gerente}" dominio="MembroEntity" exibeBranco="S" ajudaChave="ajuda.gerente"/> 
+				</plcf:celula>  
+				<plcf:celula> 
+					<plcf:titulo value="#{msg['label.status']}"/>  
+					<plcf:comboEstatico id="status" value="#{projeto.status}" dominio="StatusProjeto" exibeBranco="S" ajudaChave="ajuda.status"/> 
+				</plcf:celula> 
+			</plcf:linha>
+			<plcf:linha> 
+				<plcf:celula>
+					<plcf:titulo value="#{msg['label.risco']}"/>
+					<plcf:comboEstatico id="risco" value="#{projeto.risco}" dominio="RiscoProjeto" exibeBranco="S" somenteLeitura="S" ajudaChave="ajuda.risco"/>
+				</plcf:celula>
+			</plcf:linha>	
+		</plcf:tabela> 
+	</ui:composition> 
+</html>

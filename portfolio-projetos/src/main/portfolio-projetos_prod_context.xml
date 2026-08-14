@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<Context displayName="portfolio-projetos"  
+         docBase="portfolio-projetos" 
+         path="portfolio-projetos" 
+         privileged="true" swallowOutput="off">
+   
+<Resource name="jdbc/portfolio-projetos"
+          type="javax.sql.DataSource"
+          driverClassName="org.postgresql.Driver"
+          url="jdbc:postgresql://localhost:5432/portfolio_projetos"
+          username="portfolio"
+          password="portfolio"
+          maxActive="50" maxWait="-1" maxIdle="10"
+          removeAbandoned="true" logAbandoned="true" />
+
+
+ <!-- JCDI / Weld (RI)  -->      
+ <Resource name="BeanManager"
+      auth="Container"
+      type="javax.enterprise.inject.spi.BeanManager"
+      factory="org.jboss.weld.resources.ManagerObjectFactory"/>
+ <!-- Uncomment to enable injection into Servlet -->
+ <!-- <Listener className="org.jboss.weld.environment.tomcat.WeldLifecycleListener"/>  -->
+
+</Context>
+
