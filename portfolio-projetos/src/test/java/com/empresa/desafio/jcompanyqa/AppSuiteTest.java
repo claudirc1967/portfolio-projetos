@@ -32,7 +32,9 @@ public class AppSuiteTest {
 	public static Test suite() {
 		TestSuite suite = new TestSuite();
 		//suite.addTestSuite(ClassTesteExemplo.class);
-
+		suite.addTestSuite(com.empresa.desafio.entity.StatusProjetoTest.class);
+		suite.addTestSuite(com.empresa.desafio.entity.MembroFuncionarioTest.class);
+		suite.addTestSuite(com.empresa.desafio.entity.ProjetoRiscoTest.class);
 		return suite;
 	}
 }
